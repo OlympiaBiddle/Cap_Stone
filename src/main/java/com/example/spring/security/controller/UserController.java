@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.spring.security.helper.Message;
 import com.example.spring.security.model.Contact;
@@ -171,8 +172,38 @@ public class UserController {
 		return "redirect:/user/show-contacts/0";
 	}
 	
+	//open update Contact by id
+	@PostMapping("/update-contact/{cid}")
+	public String updateForm(@PathVariable("cid") Integer cId,
+			Model m) {
+		
+		m.addAttribute("title", "Update Contact");
+		
+		
+		Contact contact = contactService.getContactById(cId);
+		
+		m.addAttribute("contact", contact);
+		
+		return "normal/update_form";
+	}
 	
-	
-	
+	//update contact by id
+	@RequestMapping(value="/process-update", method= RequestMethod.POST)
+	public String updateContact(@ModelAttribute Contact contact,
+			Principal principal) {
+		
+		
+		String userName = principal.getName();
+		User user = this.userService.findByEmail(userName);
+		contact.setUser(user);
+		this.contactRepository.save(contact);
+		
+		//print statements to see if they are working
+		System.out.println("Contact Name "+contact.getName());
+		System.out.println("Contact ID: "+contact.getcId());
+		
+		return "redirect:/user/show-contacts/0";
+		//return "redirect:/user/"+contact.getcId()+"/contact";
+	}
 	
 }

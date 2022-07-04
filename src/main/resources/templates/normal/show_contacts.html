@@ -50,7 +50,9 @@
 							
 						<a th:href="@{'/user/delete/'+ ${c.cId}}" href="#" class="btn btn-danger btn-sm"> Delete</a> 
 							
-							<a  href="#" class="btn btn-primary btn-sm"> Update</a>
+							<form method="post" th:action="@{'/user/update-contact/'+${c.cId}}" class="mt-2">
+								<button type="submit" class="btn btn-primary btn-sm"> Update</button>
+							</form>
 							
 							</td>
 						</tr>

@@ -58,7 +58,7 @@
 <span onclick="toggleSidebar()" class="crossBtn"> &times;</span>
 
 	<a href="#" th:href="@{/user/index}" class="item"> <i class="fa fa-home"></i> Home</a>
-	<a href="#" class="item"><i class="fa fa-users"></i> View Contacts</a>
+	<a href="#" th:href="@{/user/show-contacts}" class="item"><i class="fa fa-users"></i> View Contacts</a>
 	<a href="#" th:href="@{/user/add-contact}" class="item"><i class="fa fa-plus"></i> Add Contact</a>
 	<a href="#" class="item"><i class="fa fa-user"></i> My Profile</a>
 	<a href="#" class="item"><i class="fa fa-cogs"></i> Settings</a>
@@ -68,8 +68,20 @@
 	<!--End of side bar content-->
 	<!--start of content-->
 				<div class="content mt-5">
+				
+				
 				<i onclick="toggleSidebar()" class="fas fa-bars m-3"></i>
 				
+				<!--Message box
+				<div class="container">
+				
+					<div class="alert alert-success text-center" role="alert">
+						This is a success alert-check it out!
+					</div>	
+				
+				</div>
+						
+					-->		
 						<div th:replace="${content}"></div>
 				
 				</div>

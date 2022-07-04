@@ -21,7 +21,6 @@
 
 								<form action="#" 
 								th:object="${contact}"
-								enctype="multipart/form-data"
 								method="POST"
 								th:action="@{/user/process-contact}"
 								class="mt-2"
@@ -39,7 +38,7 @@
 											<i class="fas fa-user-alt"></i>
 										</div>
 									</div>
-									<input type="text" name="name" id="name" placeholder="Enter name here" class="form-control">
+									<input required type="text" name="name" id="name" placeholder="Enter name here" class="form-control">
 
 								</div>
 								<!--Work-->
@@ -90,14 +89,8 @@
 									<textarea name="description" id="description" class="form-control" rows="5" placeholder="Enter Notes"></textarea>
 								</div>
 								
-								<!--Image field-->
-
-								<div class="custom-file">
-									<input type="file" name="profileImage" >
-								</div>
 								
-								
-
+								<!--button-->
 								<div class="container text-center">
 									<button class="btn btn-outline-primary">Save Contact</button>
 

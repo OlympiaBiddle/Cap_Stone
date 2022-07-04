@@ -1,19 +1,29 @@
 package com.example.spring.security.controller;
 
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.security.Principal;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.example.spring.security.model.Contact;
 import com.example.spring.security.model.User;
 import com.example.spring.security.repository.ContactRepository;
 import com.example.spring.security.repository.UserRepository;
+import com.example.spring.security.service.ContactService;
 import com.example.spring.security.service.UserService;
 
 @Controller
@@ -25,6 +35,9 @@ public class UserController {
 	
 	@Autowired
 	private ContactRepository contactRepository;
+	
+	@Autowired
+	private ContactService contactService;
 	
 	
 	//method for adding user model to response
@@ -73,12 +86,9 @@ public class UserController {
 		c1.setEmail(contact.getEmail());
 		c1.setPhone(contact.getPhone());
 		c1.setDescription(contact.getDescription());
-		c1.setImage(contact.getImage());
 		c1.setWork(contact.getWork());
 		c1.setUser(user);
-		contactRepository.save(c1);
-		
-		
+		contactService.saveContact(c1);
 		
 		System.out.println("DATA" +contact );
 		
@@ -87,5 +97,23 @@ public class UserController {
 		
 		System.out.println("Data " +contact);
 		return "normal/add_contact_form";
+	}
+	
+	
+	//show contacts handler
+	@GetMapping("/show-contacts")
+	public String showContacts(Model m, Principal principal) {
+		
+		m.addAttribute("title", "Show User Contacts");
+		//show list of contacts
+		
+		String userName = principal.getName();
+		User user = this.userService.findByEmail(userName);
+		
+		List<Contact> contacts = this.contactRepository.findContactsByUser(user.getId());
+		m.addAttribute("contacts", contacts);
+		
+		return "normal/show_contacts";
+		
 	}
 }

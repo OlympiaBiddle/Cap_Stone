@@ -1,20 +1,17 @@
 package com.example.spring.security.service;
 
-import java.util.List;
+
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import com.example.spring.security.model.Contact;
-import com.example.spring.security.model.User;
+
 import com.example.spring.security.repository.ContactRepository;
 
 @Service
 public class ContactServiceImpl implements ContactService {
-	
-	@Autowired
-	   private UserService userService;
 	
 	
 	private ContactRepository contactRepository;
@@ -57,7 +54,7 @@ public class ContactServiceImpl implements ContactService {
 		if (optional.isPresent()) {
 			contact = optional.get();
 		} else {
-			throw new RuntimeException("Contact with product id: " + id + "not found");
+			throw new RuntimeException("Contact with contact id: " + id + "not found");
 		}
 		return contact;
 	}

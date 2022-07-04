@@ -2,7 +2,8 @@ package com.example.spring.security.controller;
 
 
 import java.security.Principal;
-import java.util.Optional;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
+import com.example.spring.security.helper.Message;
 import com.example.spring.security.model.Contact;
 import com.example.spring.security.model.User;
 import com.example.spring.security.repository.ContactRepository;
@@ -131,7 +132,10 @@ public class UserController {
 	//show individual contact detail
 	@RequestMapping("/{cId}/contact")
 	public String showContactDetail(@PathVariable("cId") Integer cId,
-			Model model) {
+			Model model, Principal principal) {
+		
+		String userName = principal.getName();
+		User user = this.userService.findByEmail(userName);
 		
 		System.out.println("cId" +cId);
 		
@@ -139,8 +143,36 @@ public class UserController {
 		
 		System.out.println(contact);
 		
-		model.addAttribute("contact", contact);
+		if(user.getId() == contact.getUser().getId())
+		{
+			model.addAttribute("contact", contact);
+			model.addAttribute("title", contact.getName());
+		}
+		
+		//model.addAttribute("contact", contact);
 		
 		return "normal/contact_detail";
 	}
+	
+	
+	//delete contact by Id
+	@GetMapping("/delete/{cid}")
+	public String deleteContact(@PathVariable("cid") Integer cId,
+			Model model,
+			HttpSession session) {
+		
+		//check..assignment
+		 this.contactRepository.deleteByIdCustom(cId);
+		
+		
+		session.setAttribute("message", new Message("Contacted deleted successfully",
+				"success"));
+		
+		return "redirect:/user/show-contacts/0";
+	}
+	
+	
+	
+	
+	
 }

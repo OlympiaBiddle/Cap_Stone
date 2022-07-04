@@ -1,15 +1,11 @@
 package com.example.spring.security.controller;
 
-import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
+
 import java.security.Principal;
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -20,13 +16,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
+
 
 import com.example.spring.security.model.Contact;
 import com.example.spring.security.model.User;
 import com.example.spring.security.repository.ContactRepository;
-import com.example.spring.security.repository.UserRepository;
+
 import com.example.spring.security.service.ContactService;
 import com.example.spring.security.service.UserService;
 
@@ -131,5 +126,21 @@ public class UserController {
 		m.addAttribute("totalPages", contacts.getTotalPages());
 		return "normal/show_contacts";
 		
+	}
+	
+	//show individual contact detail
+	@RequestMapping("/{cId}/contact")
+	public String showContactDetail(@PathVariable("cId") Integer cId,
+			Model model) {
+		
+		System.out.println("cId" +cId);
+		
+		Contact contact = contactService.getContactById(cId);
+		
+		System.out.println(contact);
+		
+		model.addAttribute("contact", contact);
+		
+		return "normal/contact_detail";
 	}
 }

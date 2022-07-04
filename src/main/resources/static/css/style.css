@@ -93,3 +93,11 @@ margin-left:20%;
 	font-size:36px;
 	cursor:grab;
 }
+
+.my_profile_picture{
+width:35px;
+height: 35px;
+object-fit: cover;
+border-radius:50%;
+border: 1px solid black;
+}

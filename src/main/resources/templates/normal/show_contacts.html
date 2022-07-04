@@ -33,9 +33,19 @@
 					
 						<tr th:each="c : ${contacts}">
 							<th scope="row" th:text="${'KITUSER'+c.cId}">1</th>
+							
 							<td th:text="${c.name}">Mark</td>
-							<td th:text="${c.email}">Otto</td>
+							
+							<!--Email-->
+							<td>
+								<a th:href= "@{'/user/'+${c.cId}+'/contact/'}" href="#"> 
+									<span th:text="${c.email}"></span>							
+								</a>
+							</td>
+							
+							
 							<td th:text="${c.phone}">@mdo</td>
+							
 							<td>
 							
 							<button class="btn btn-danger btn-sm"> Delete</button>

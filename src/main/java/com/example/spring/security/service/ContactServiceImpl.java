@@ -53,14 +53,12 @@ public class ContactServiceImpl implements ContactService {
 	public Contact getContactById(int id) {
 		// TODO Auto-generated method stub
 		Optional<Contact> optional = contactRepository.findById(id);
-		 Contact contact= null;
-		 if(optional.isPresent()) {
-			 contact = optional.get();
-			}else {
-				throw new RuntimeException("Contact with this id: "+ id+" not found");
-			}
-			
-		
+		Contact contact = null;
+		if (optional.isPresent()) {
+			contact = optional.get();
+		} else {
+			throw new RuntimeException("Contact with product id: " + id + "not found");
+		}
 		return contact;
 	}
 

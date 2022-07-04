@@ -17,16 +17,47 @@ public class Contact {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer cId;
+	
 	private String name;
+	
 	private String work;
+	
 	private String email;
+	
 	private String phone;
-	private String image;
+	
 	@Column(length = 1000)
 	private String description;
+	
+	private String image;
+	
 
 	@ManyToOne
 	private User user;
+
+	
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public Contact() {
+		
+	}
+	
+	
 
 	public Integer getcId() {
 		return cId;
@@ -68,7 +99,21 @@ public class Contact {
 		this.phone = phone;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
 	public String getImage() {
 		return image;
 	}
+
+	@Override
+	public String toString() {
+		return "Contact [cId=" + cId + ", name=" + name + ", work=" + work + ", email=" + email + ", phone=" + phone
+				+ ", description=" + description + ", image=" + image + ", user=" + user + "]";
+	}
+
+
+	
+	
 }

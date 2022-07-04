@@ -12,6 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.spring.security.dto.UserRegistrationDto;
+import com.example.spring.security.model.Contact;
 import com.example.spring.security.model.Role;
 import com.example.spring.security.model.User;
 import com.example.spring.security.repository.UserRepository;
@@ -58,5 +59,8 @@ public class UserServiceImpl implements UserService {
                .map(role -> new SimpleGrantedAuthority(role.getName()))
                .collect(Collectors.toList());
    }
+
+
+   
 }
 

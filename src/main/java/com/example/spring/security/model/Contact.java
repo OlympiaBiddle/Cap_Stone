@@ -53,12 +53,6 @@ public class Contact {
 		this.image = image;
 	}
 
-	public Contact() {
-		
-	}
-	
-	
-
 	public Integer getcId() {
 		return cId;
 	}
@@ -107,13 +101,9 @@ public class Contact {
 		return image;
 	}
 
-	@Override
-	public String toString() {
-		return "Contact [cId=" + cId + ", name=" + name + ", work=" + work + ", email=" + email + ", phone=" + phone
-				+ ", description=" + description + ", image=" + image + ", user=" + user + "]";
+	public Contact() {
+		
 	}
-
-
 	
 	
 }

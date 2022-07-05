@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
+
+
+
 body{
-background: #e2e2e2!important;
+background: RGB(55, 64, 79);
+color: black;;
 }
 
 .bg-primary{
-background: #009688 !important;
+background: RGB(106, 4, 135) !important;
 }
 
 .banner{
@@ -17,19 +22,23 @@ color: white;
 
 .my-card{
 padding: 20px;
-background:#ffffff;
+background:RGB(201, 207, 211);;
 }
 
+.btn-primary, .btn-primary:hover, btn-primary:active, .btn-primary:visited{
+background-color: 580370!important;
+}
 
 #login .container #login-row #login-column #login-box {
   margin-top: 120px;
   max-width: 600px;
   height: 500px;
-  border: 1px solid #9C9C9C;
-  background-color:white;;
-  color:  #009688 !important;
+  border: 1px solid RGB(139, 147, 166); 
+  background-color:RGB(201, 207, 211);;
+  color: RGB(106, 4, 135) !important;
 }
 #login .container #login-row #login-column #login-box #login-form {
+ color: RGB(106, 4, 135) !important;
   padding: 20px;
 }
 #login .container #login-row #login-column #login-box #login-form #register-link {
@@ -41,7 +50,7 @@ background:#ffffff;
 	.sidebar {
 	display: none;
 	width: 80% !important;
-	background: white;
+	background:E0E0E0;;
 	height: 100vh;
 	position: fixed;
 	padding-top: 20px;
@@ -67,7 +76,7 @@ z-index: 9999999999999999999999999999;
 	width: 100%;
 	padding: 10px 25px;
 	text-decoration: none;
-	color: green;
+	color: RGB(106, 4, 135);
 }
 
 .sidebar a:hover{

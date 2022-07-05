@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www/thymeleaf.org" 
-	th:replace="normal/base::Layout(~{::section})">
+<html xmlns:th="http://www/thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
 
 <head>
 	<meta charset="UTF-8">
@@ -9,9 +8,24 @@
 
 <body>
 	<section>
-		<h1>Your Dashboard</h1>
-		
-		
+		<div class="container">
+
+			<div class="card">
+
+				<div class="card-body mt-5">
+
+					<div class="container text-center">
+
+						<img style="width:250px; height: 250px;" th:src="@{'/img/contact.png'}"
+							class="my_profile_picture">
+					</div>
+					<h1 class="text-center mt-3 text-secondary font-italic font-weight-light">Start Adding Contacts</h1>
+					<a th:href="@{/user/add-contact}" class="btn btn-primary btn-block text-uppercase mt-4" >Add Contact</a>
+				</div>
+			</div>
+		</div>
+
+
 	</section>
 </body>
 

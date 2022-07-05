@@ -2,14 +2,15 @@ package com.olympiabiddle.keepintouch.helper;
 
 public class Message {
 	
-	private String type;
+	
 	private String content;
+	private String type;
 	
-	
-	public Message(String type, String content) {
-		
-		this.type = type;
+
+	public Message(String content, String type) {
+		super();
 		this.content = content;
+		this.type = type;
 	}
 
 

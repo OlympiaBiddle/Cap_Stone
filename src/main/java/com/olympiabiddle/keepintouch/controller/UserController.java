@@ -72,6 +72,8 @@ public class UserController {
 		return "normal/user_dashboard";
 	}
 	
+	
+	
 	//open add contact form handler
 	@GetMapping("/add-contact")
 	public String openAddContactForm(Model model) {
@@ -84,8 +86,11 @@ public class UserController {
 	//save contact form
 	//url must match the url from the post method
 	@PostMapping("/process-contact")
-	public String processContact(@ModelAttribute Contact contact, Principal principal)
+	public String processContact(@ModelAttribute Contact contact,
+			Principal principal, HttpSession session)
 	{
+		
+		try {
 		String userName = principal.getName();
 		User user = this.userService.findByEmail(userName);
 		//user.getContacts().add(contact);
@@ -99,6 +104,8 @@ public class UserController {
 		c1.setUser(user);
 		contactService.saveContact(c1);
 		
+		session.setAttribute("message", new Message("Your Contact was added! You can add more.", "success"));
+		
 		/*
 		 * test to see if it was working correctly
 		 
@@ -109,6 +116,18 @@ public class UserController {
 		
 		System.out.println("Data " +contact);
 		*/
+		
+		//Print success message
+		
+		}catch (Exception e) {
+			System.out.println("Error "+ e.getMessage());
+			e.printStackTrace();
+			//print error message
+			session.setAttribute("message", new Message("Something went wrong! Try it again!", "danger"));
+			
+		}
+		
+		
 		return "normal/add_contact_form";
 	}
 	

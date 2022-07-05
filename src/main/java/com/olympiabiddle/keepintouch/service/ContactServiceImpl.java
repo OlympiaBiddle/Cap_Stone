@@ -32,8 +32,8 @@ public class ContactServiceImpl implements ContactService {
 //		c1.setEmail(contact.getEmail());
 //		c1.setPhone(contact.getPhone());
 //		c1.setDescription(contact.getDescription());
-//		c1.setImage(contact.getImage());
 //		c1.setWork(contact.getWork());
+//		c1.getUser(contact.getcId());
 		
 		this.contactRepository.save(contact);
 		

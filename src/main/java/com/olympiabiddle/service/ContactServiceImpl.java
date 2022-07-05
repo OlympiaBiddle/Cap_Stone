@@ -60,7 +60,7 @@ public class ContactServiceImpl implements ContactService {
 
 	@Override
 	public void deleteContactById(int id) {
-		// TODO Auto-generated method stub
+		
 		this.contactRepository.deleteById(id);;
 	}
 	

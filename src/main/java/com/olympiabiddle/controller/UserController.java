@@ -1,10 +1,12 @@
-package com.example.spring.security.controller;
+package com.olympiabiddle.controller;
 
 
 import java.security.Principal;
 
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.data.domain.Page;
@@ -19,17 +21,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.example.spring.security.helper.Message;
-import com.example.spring.security.model.Contact;
-import com.example.spring.security.model.User;
-import com.example.spring.security.repository.ContactRepository;
-
-import com.example.spring.security.service.ContactService;
-import com.example.spring.security.service.UserService;
+import com.olympiabiddle.helper.Message;
+import com.olympiabiddle.model.Contact;
+import com.olympiabiddle.model.User;
+import com.olympiabiddle.repository.ContactRepository;
+import com.olympiabiddle.service.ContactService;
+import com.olympiabiddle.service.UserService;
 
 @Controller
 @RequestMapping("/user")
 public class UserController {
+	
+	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	   private UserService userService;
@@ -59,6 +62,11 @@ public class UserController {
 	//dashboard
 	@RequestMapping("/index")
 	public String dashboard(Model model, Principal principal) {
+		log.info("Info log statement for Main Controller");
+		log.warn("Warn log statement for Main Controller");
+		log.error("Error log statement for Main Controller");
+		
+		
 		//
 		model.addAttribute("title", "User Dashboard");
 		return "normal/user_dashboard";
@@ -91,12 +99,16 @@ public class UserController {
 		c1.setUser(user);
 		contactService.saveContact(c1);
 		
+		/*
+		 * test to see if it was working correctly
+		 
 		System.out.println("DATA" +contact );
 		
 		System.out.println("Added to database");
 
 		
 		System.out.println("Data " +contact);
+		*/
 		return "normal/add_contact_form";
 	}
 	

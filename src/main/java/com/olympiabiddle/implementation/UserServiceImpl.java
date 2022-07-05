@@ -1,4 +1,4 @@
-package com.example.spring.security.implementation;
+package com.olympiabiddle.implementation;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -11,12 +11,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.example.spring.security.dto.UserRegistrationDto;
-import com.example.spring.security.model.Contact;
-import com.example.spring.security.model.Role;
-import com.example.spring.security.model.User;
-import com.example.spring.security.repository.UserRepository;
-import com.example.spring.security.service.UserService;
+import com.olympiabiddle.dto.UserRegistrationDto;
+import com.olympiabiddle.model.Role;
+import com.olympiabiddle.model.User;
+import com.olympiabiddle.repository.UserRepository;
+import com.olympiabiddle.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {

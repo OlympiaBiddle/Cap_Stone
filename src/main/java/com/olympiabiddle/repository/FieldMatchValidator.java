@@ -1,4 +1,4 @@
-package com.example.spring.security.repository;
+package com.olympiabiddle.repository;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

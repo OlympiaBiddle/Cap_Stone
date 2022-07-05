@@ -1,6 +1,9 @@
-package com.example.spring.security.controller;
+package com.olympiabiddle.controller;
 
 import javax.validation.Valid;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,19 +13,27 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.spring.security.dto.UserRegistrationDto;
-import com.example.spring.security.model.User;
-import com.example.spring.security.service.UserService;
+import com.olympiabiddle.dto.UserRegistrationDto;
+import com.olympiabiddle.model.User;
+import com.olympiabiddle.service.UserService;
 
 @Controller
 @RequestMapping("/registration")
 public class UserRegistrationController {
+	
+	private final Logger log = LoggerFactory.getLogger(this.getClass());
 
    @Autowired
    private UserService userService;
 
    @ModelAttribute("user")
    public UserRegistrationDto userRegistrationDto() {
+	   log.info("Info log statement for Main Controller");
+		log.warn("Warn log statement for Main Controller");
+		log.error("Error log statement for Main Controller");
+	   
+	   
+	   
        return new UserRegistrationDto();
    }
 

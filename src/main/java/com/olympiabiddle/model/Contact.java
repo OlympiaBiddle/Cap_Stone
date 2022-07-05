@@ -1,4 +1,4 @@
-package com.example.spring.security.model;
+package com.olympiabiddle.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,4 +1,4 @@
-package com.example.spring.security.dto;
+package com.olympiabiddle.dto;
 
 import javax.validation.constraints.AssertTrue;
 //import javax.validation.constraints.Email;
@@ -7,7 +7,7 @@ import javax.validation.constraints.AssertTrue;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import com.example.spring.security.repository.FieldMatch;
+import com.olympiabiddle.repository.FieldMatch;
 
 //import net.javaguides.springboot.springsecurity.constraint.FieldMatch;
 
@@ -17,27 +17,27 @@ import com.example.spring.security.repository.FieldMatch;
 })
 public class UserRegistrationDto {
 
-    @NotEmpty
+    @NotEmpty(message="Please enter your first name.")
     private String firstName;
 
-    @NotEmpty
+    @NotEmpty(message="Please enter your last name.")
     private String lastName;
 
-    @NotEmpty
+    @NotEmpty(message="Please enter a password.")
     private String password;
 
-    @NotEmpty
+    @NotEmpty(message="Please confirm your password.")
     private String confirmPassword;
 
     @Email
-    @NotEmpty
+    @NotEmpty(message="Please your email. e.g. john@email.com")
     private String email;
 
     @Email
-    @NotEmpty
+    @NotEmpty(message="Please confirm your email.")
     private String confirmEmail;
 
-    @AssertTrue
+    @AssertTrue(message="Please check the box.")
     private Boolean terms;
 
     public String getFirstName() {

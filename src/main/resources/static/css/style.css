@@ -25,8 +25,8 @@ padding: 20px;
 background:RGB(201, 207, 211);;
 }
 
-.btn-primary, .btn-primary:hover, btn-primary:active, .btn-primary:visited{
-background-color: 580370!important;
+.btn .btn-primary{
+background-color: RGB(106, 4, 135) !important;
 }
 
 #login .container #login-row #login-column #login-box {
@@ -44,6 +44,18 @@ background-color: 580370!important;
 #login .container #login-row #login-column #login-box #login-form #register-link {
   margin-top: -85px;
 }
+
+
+.container .card{
+border-radius: 30px;
+border: 1px solid RGB(106, 4, 135);
+}
+
+.container{
+color:RGB(106, 4, 135);
+}
+
+
 
 /*  Side bar style*/
 @media only screen and (max-width: 600px){
@@ -108,5 +120,9 @@ width:35px;
 height: 35px;
 object-fit: cover;
 border-radius:50%;
-border: 1px solid black;
+border: 1px solid RGB(106, 4, 135);
+}
+
+h1{
+color: RGB(106, 4, 135) !important;
 }

@@ -1,4 +1,4 @@
-package com.example.spring.security.securityconfiguration;
+package com.olympiabiddle.securityconfiguration;
 
 
 //import net.perscholas.springboot.springsecurity.service.UserService;
@@ -12,7 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import com.example.spring.security.service.UserService;
+import com.olympiabiddle.service.UserService;
 
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {

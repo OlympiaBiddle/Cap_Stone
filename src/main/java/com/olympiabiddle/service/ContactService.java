@@ -1,9 +1,9 @@
-package com.example.spring.security.service;
+package com.olympiabiddle.service;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.example.spring.security.model.Contact;
+import com.olympiabiddle.model.Contact;
 
 public interface ContactService {
 

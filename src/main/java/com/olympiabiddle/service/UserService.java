@@ -1,11 +1,11 @@
-package com.example.spring.security.service;
+package com.olympiabiddle.service;
 
 
 import org.springframework.security.core.userdetails.UserDetailsService;
 
-import com.example.spring.security.dto.UserRegistrationDto;
-import com.example.spring.security.model.Contact;
-import com.example.spring.security.model.User;
+import com.olympiabiddle.dto.UserRegistrationDto;
+import com.olympiabiddle.model.Contact;
+import com.olympiabiddle.model.User;
 
 public interface UserService extends UserDetailsService {
    User findByEmail(String email);

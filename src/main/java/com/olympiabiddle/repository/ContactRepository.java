@@ -1,4 +1,4 @@
-package com.example.spring.security.repository;
+package com.olympiabiddle.repository;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.spring.security.model.Contact;
-import com.example.spring.security.model.User;
+import com.olympiabiddle.model.Contact;
+import com.olympiabiddle.model.User;
 
 public interface ContactRepository extends CrudRepository<Contact, Integer> {
 	

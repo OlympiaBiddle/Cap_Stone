@@ -1,4 +1,4 @@
-package com.example.spring.security.service;
+package com.olympiabiddle.service;
 
 
 import java.util.Optional;
@@ -6,9 +6,8 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.example.spring.security.model.Contact;
-
-import com.example.spring.security.repository.ContactRepository;
+import com.olympiabiddle.model.Contact;
+import com.olympiabiddle.repository.ContactRepository;
 
 @Service
 public class ContactServiceImpl implements ContactService {

@@ -48,10 +48,10 @@
 							
 							<td>
 							
-						<a th:href="@{'/user/delete/'+ ${c.cId}}" href="#" class="btn btn-danger btn-sm"> Delete</a> 
+						<a th:href="@{'/user/delete/'+ ${c.cId}}" href="#" class="fa-solid fa-trash-can"></a> 
 							
 							<form method="post" th:action="@{'/user/update-contact/'+${c.cId}}" class="mt-2">
-								<button type="submit" class="btn btn-primary btn-sm"> Update</button>
+								<button type="submit" class="fa fa-refresh"> </button>
 							</form>
 							
 							</td>

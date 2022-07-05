@@ -1,4 +1,4 @@
-package com.example.spring.security.helper;
+package com.olympiabiddle.helper;
 
 public class Message {
 	

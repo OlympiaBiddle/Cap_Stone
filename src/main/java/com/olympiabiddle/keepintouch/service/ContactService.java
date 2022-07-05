@@ -1,9 +1,9 @@
-package com.olympiabiddle.service;
+package com.olympiabiddle.keepintouch.service;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.olympiabiddle.model.Contact;
+import com.olympiabiddle.keepintouch.model.Contact;
 
 public interface ContactService {
 

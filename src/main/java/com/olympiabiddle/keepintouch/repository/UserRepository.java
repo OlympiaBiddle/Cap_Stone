@@ -1,9 +1,9 @@
-package com.olympiabiddle.repository;
+package com.olympiabiddle.keepintouch.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.olympiabiddle.model.User;
+import com.olympiabiddle.keepintouch.model.User;
 
 //import net.perscholas.springboot.springsecurity.model.User;
 

@@ -10,7 +10,7 @@
         </Console>
     </Appenders>
     <Loggers>
-        <Logger name="com.olympiabiddle.controller" level="debug"  additivity="false">
+        <Logger name="com.olympiabiddle.keepintouch.controller" level="debug"  additivity="false">
             <AppenderRef ref="Console" />
         </Logger>
        <Root level="info">

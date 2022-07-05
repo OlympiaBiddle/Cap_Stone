@@ -1,4 +1,4 @@
-package com.olympiabiddle.controller;
+package com.olympiabiddle.keepintouch.controller;
 
 
 import java.security.Principal;
@@ -21,12 +21,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.olympiabiddle.helper.Message;
-import com.olympiabiddle.model.Contact;
-import com.olympiabiddle.model.User;
-import com.olympiabiddle.repository.ContactRepository;
-import com.olympiabiddle.service.ContactService;
-import com.olympiabiddle.service.UserService;
+import com.olympiabiddle.keepintouch.helper.Message;
+import com.olympiabiddle.keepintouch.model.Contact;
+import com.olympiabiddle.keepintouch.model.User;
+import com.olympiabiddle.keepintouch.repository.ContactRepository;
+import com.olympiabiddle.keepintouch.service.ContactService;
+import com.olympiabiddle.keepintouch.service.UserService;
 
 @Controller
 @RequestMapping("/user")

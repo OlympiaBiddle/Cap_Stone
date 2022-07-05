@@ -8,13 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.olympiabiddle.Application;
-import com.olympiabiddle.controller.MainController;
-import com.olympiabiddle.controller.UserController;
-import com.olympiabiddle.controller.UserRegistrationController;
-import com.olympiabiddle.implementation.UserServiceImpl;
-import com.olympiabiddle.model.Contact;
-import com.olympiabiddle.service.ContactServiceImpl;
+import com.olympiabiddle.keepintouch.Application;
+import com.olympiabiddle.keepintouch.controller.MainController;
+import com.olympiabiddle.keepintouch.controller.UserController;
+import com.olympiabiddle.keepintouch.controller.UserRegistrationController;
+import com.olympiabiddle.keepintouch.implementation.UserServiceImpl;
+import com.olympiabiddle.keepintouch.model.Contact;
+import com.olympiabiddle.keepintouch.service.ContactServiceImpl;
 
 @SpringBootTest(classes= Application.class)
 class ApplicationTests {

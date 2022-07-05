@@ -1,4 +1,4 @@
-package com.olympiabiddle.repository;
+package com.olympiabiddle.keepintouch.repository;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

@@ -1,4 +1,4 @@
-package com.olympiabiddle.implementation;
+package com.olympiabiddle.keepintouch.implementation;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -11,11 +11,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.olympiabiddle.dto.UserRegistrationDto;
-import com.olympiabiddle.model.Role;
-import com.olympiabiddle.model.User;
-import com.olympiabiddle.repository.UserRepository;
-import com.olympiabiddle.service.UserService;
+import com.olympiabiddle.keepintouch.dto.UserRegistrationDto;
+import com.olympiabiddle.keepintouch.model.Role;
+import com.olympiabiddle.keepintouch.model.User;
+import com.olympiabiddle.keepintouch.repository.UserRepository;
+import com.olympiabiddle.keepintouch.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {

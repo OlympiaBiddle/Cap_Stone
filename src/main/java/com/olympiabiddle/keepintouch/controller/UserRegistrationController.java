@@ -1,4 +1,4 @@
-package com.olympiabiddle.controller;
+package com.olympiabiddle.keepintouch.controller;
 
 import javax.validation.Valid;
 
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.olympiabiddle.dto.UserRegistrationDto;
-import com.olympiabiddle.model.User;
-import com.olympiabiddle.service.UserService;
+import com.olympiabiddle.keepintouch.dto.UserRegistrationDto;
+import com.olympiabiddle.keepintouch.model.User;
+import com.olympiabiddle.keepintouch.service.UserService;
 
 @Controller
 @RequestMapping("/registration")

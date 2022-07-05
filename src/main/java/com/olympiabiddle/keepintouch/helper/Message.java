@@ -1,4 +1,4 @@
-package com.olympiabiddle.helper;
+package com.olympiabiddle.keepintouch.helper;
 
 public class Message {
 	

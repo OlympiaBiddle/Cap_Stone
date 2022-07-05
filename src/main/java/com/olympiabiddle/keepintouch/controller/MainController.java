@@ -1,4 +1,4 @@
-package com.olympiabiddle.controller;
+package com.olympiabiddle.keepintouch.controller;
 
 
 import org.slf4j.Logger;

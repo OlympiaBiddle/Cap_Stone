@@ -1,4 +1,4 @@
-package com.olympiabiddle.model;
+package com.olympiabiddle.keepintouch.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

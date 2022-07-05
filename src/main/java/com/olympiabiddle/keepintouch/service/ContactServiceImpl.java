@@ -1,4 +1,4 @@
-package com.olympiabiddle.service;
+package com.olympiabiddle.keepintouch.service;
 
 
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.olympiabiddle.model.Contact;
-import com.olympiabiddle.repository.ContactRepository;
+import com.olympiabiddle.keepintouch.model.Contact;
+import com.olympiabiddle.keepintouch.repository.ContactRepository;
 
 @Service
 public class ContactServiceImpl implements ContactService {

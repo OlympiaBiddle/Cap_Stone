@@ -1,4 +1,4 @@
-package com.olympiabiddle.dto;
+package com.olympiabiddle.keepintouch.dto;
 
 import javax.validation.constraints.AssertTrue;
 //import javax.validation.constraints.Email;
@@ -7,7 +7,7 @@ import javax.validation.constraints.AssertTrue;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import com.olympiabiddle.repository.FieldMatch;
+import com.olympiabiddle.keepintouch.repository.FieldMatch;
 
 //import net.javaguides.springboot.springsecurity.constraint.FieldMatch;
 
